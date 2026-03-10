@@ -174,7 +174,7 @@ Price: ₹${price}
 `
 
 window.location.href=
-`upi://pay?pa=YOURUPI@upi&pn=SneakerStore&am=${price}`
+`upi://pay?pa=abinavsdinesh24@fam&pn=SneakerStore&am=${price}`
 
 window.open(
 `https://wa.me/918281454227?text=${encodeURIComponent(order)}`
