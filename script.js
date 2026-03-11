@@ -49,6 +49,34 @@ brand:"Asian",
 img:"bacan-multicolour.jpg"
 }
 
+{
+name:"Men's Sneakers for Casual Everyday Style",
+price:1499,
+brand:"RedTape",
+img:"redtape-style.jpg"
+},
+
+{
+name:"Men's Lifestyle Sneakers | Sleek Lace-Up Design for Daily Comfort",
+price:1499,
+brand:"RedTape",
+img:"redtape-lifestyle.jpg"
+},
+
+{
+name:"Men Sneakers for Casual Everyday Comfort",
+price:1499,
+brand:"RedTape",
+img:"redtape-comfort.jpg"
+},
+
+{
+name:"Casual Sneaker Shoes for Men",
+price:1499,
+brand:"RedTape",
+img:"redtape-casual.jpg"
+}
+  
 ]
 
 function renderProducts(list){
