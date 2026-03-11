@@ -1,76 +1,20 @@
-console.log("Sneaker Store Loaded");
-
-/* PRODUCT DATABASE */
-
 const products=[
 
-{
-name:"Campus OG07",
-price:999,
-brand:"Campus",
-img:"og07.jpg"
-},
+{name:"Campus OG07",price:999,brand:"Campus",img:"og07.jpg"},
 
-{
-name:"Campus OG30",
-price:1299,
-brand:"Campus",
-img:"og30.jpg"
-},
+{name:"Campus OG30",price:1299,brand:"Campus",img:"og30.jpg"},
 
-{
-name:"Campus Pass Moments",
-price:1299,
-brand:"Campus",
-img:"Untitled.jpeg"
-},
+{name:"Asian Runner",price:899,brand:"Asian",img:"asian1.jpg"},
 
-{
-name:"Asian Runner",
-price:899,
-brand:"Asian",
-img:"asian1.jpg"
-},
+{name:"Asian Street Sneaker",price:1099,brand:"Asian",img:"asian2.jpg"},
 
-{
-name:"Asian Street Sneaker",
-price:1099,
-brand:"Asian",
-img:"asian2.jpg"
-},
+{name:"55 SAMA BLACK",price:999,brand:"Asian",img:"sama-black.jpg"},
 
-{
-name:"55 SAMA BLACK",
-price:999,
-brand:"Asian",
-img:"sama-black.jpg"
-},
+{name:"Bacan Multi Colour Sneakers",price:799,brand:"Asian",img:"bacan-multicolour.jpg"},
 
-{
-name:"Bacan Multi Colour Sneakers Trendy Sports Shoes Classy Casual Shoes For Men",
-price:799,
-brand:"Asian",
-img:"bacan-multicolour.jpg"
-},
-
-{
-name:"Men's Sneakers for Casual Everyday Style",
-price:1499,
-brand:"RedTape",
-img:"redtape-style.jpg"
-},
-
-{
-name:"Men's Lifestyle Sneakers",
-price:1499,
-brand:"RedTape",
-img:"redtape-lifestyle.jpg"
-}
+{name:"RedTape Casual Sneaker",price:1499,brand:"RedTape",img:"redtape.jpg"}
 
 ];
-
-
-/* RENDER PRODUCTS */
 
 function renderProducts(list){
 
@@ -104,10 +48,9 @@ View
 
 });
 
+enable3D();
+
 }
-
-
-/* FILTERS */
 
 function filterCampus(){
 renderProducts(products.filter(p=>p.brand==="Campus"));
@@ -125,12 +68,9 @@ function filterPrice(){
 renderProducts(products.filter(p=>p.price<=1000));
 }
 
-
-/* PRODUCT PAGE */
-
 function viewProduct(name,price,img){
 
-document.getElementById("products").style.display="none"
+document.getElementById("products").style.display="none";
 
 document.getElementById("productView").innerHTML=
 
@@ -140,22 +80,17 @@ document.getElementById("productView").innerHTML=
 
 <div class="nike-left">
 
-<img src="${img}" class="nike-shoe">
+<img src="${img}">
 
 </div>
 
-<div class="nike-right">
+<div>
 
 <h1>${name}</h1>
 
 <h2>₹${price}</h2>
 
-<p>
-Premium sneaker for everyday comfort, breathable design
-and durable outsole perfect for street style.
-</p>
-
-<h3>Select Size</h3>
+<p>Premium everyday sneaker with comfort and durability.</p>
 
 <div class="sizes">
 
@@ -165,6 +100,8 @@ and durable outsole perfect for street style.
 <button>10</button>
 
 </div>
+
+<br>
 
 <button class="buy-btn" onclick="checkout('${name}',${price})">
 Buy Now
@@ -177,9 +114,6 @@ Buy Now
 `;
 
 }
-
-
-/* CHECKOUT */
 
 function checkout(name,price){
 
@@ -205,77 +139,59 @@ Pay Now
 
 }
 
-
-/* PAYMENT */
-
 function pay(name,price){
 
-const customerName=document.getElementById("name").value
-const phone=document.getElementById("phone").value
-const address=document.getElementById("address").value
-const pincode=document.getElementById("pincode").value
+const order=
 
-const order=`
+`Sneaker Order
 
-Sneaker Order
-
-Product: ${name}
-Price: ₹${price}
-
-Customer: ${customerName}
-Phone: ${phone}
-Address: ${address}
-Pincode: ${pincode}
-
-`
+Product:${name}
+Price:${price}`;
 
 window.location.href=
-`upi://pay?pa=abinavsdinesh24@fam&pn=SneakerStore&am=${price}`
+`upi://pay?pa=abinavsdinesh24@fam&pn=SneakerStore&am=${price}`;
 
 window.open(
 `https://wa.me/918281454227?text=${encodeURIComponent(order)}`
-)
+);
 
 window.open(
 `mailto:kpsharon0@gmail.com?subject=Sneaker Order&body=${encodeURIComponent(order)}`
-)
+);
 
 }
 
-
-/* INITIAL LOAD */
-
-renderProducts(products);
-
-
-/* 3D HOVER EFFECT */
-
-document.addEventListener("mousemove",e=>{
+function enable3D(){
 
 document.querySelectorAll(".product").forEach(card=>{
 
-const rect=card.getBoundingClientRect()
+card.addEventListener("mousemove",e=>{
 
-const x=e.clientX-rect.left
-const y=e.clientY-rect.top
+const rect=card.getBoundingClientRect();
 
-const centerX=rect.width/2
-const centerY=rect.height/2
+const x=e.clientX-rect.left;
+const y=e.clientY-rect.top;
 
-const rotateX=(y-centerY)/12
-const rotateY=(centerX-x)/12
+const centerX=rect.width/2;
+const centerY=rect.height/2;
+
+const rotateX=(y-centerY)/10;
+const rotateY=(centerX-x)/10;
 
 card.querySelector(".product-inner").style.transform=
-`rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+`rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 
-})
+});
 
-})
+card.addEventListener("mouseleave",()=>{
 
-document.addEventListener("mouseleave",()=>{
+card.querySelector(".product-inner").style.transform=
+"rotateX(0) rotateY(0)";
 
-document.querySelectorAll(".product-inner").forEach(card=>{
-card.style.transform="rotateX(0) rotateY(0)"
-})
+});
 
-})
+});
+
+}
+
+renderProducts(products);
