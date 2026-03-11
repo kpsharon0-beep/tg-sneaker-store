@@ -138,6 +138,16 @@ renderProducts(asianProducts)
 
 }
 
+/* SHOW ONLY REDTAPE SHOES */
+
+function filterRedtape(){
+
+const redtapeProducts = products.filter(p => p.brand === "RedTape")
+
+renderProducts(redtapeProducts)
+
+}
+
 /* PRODUCT VIEW PAGE */
 
 function viewProduct(name,price,img){
