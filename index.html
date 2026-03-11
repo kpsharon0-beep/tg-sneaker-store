@@ -21,72 +21,45 @@
 
 <nav>
 
-<a href="#">Home</a>
-<a href="#">Campus</a>
-<a href="#">Asian</a>
+<a href="#" onclick="renderProducts(products)">Home</a>
+<a href="#" onclick="filterCampus()">Campus</a>
+<a href="#" onclick="filterAsian()">Asian</a>
+<a href="#" onclick="filterRedtape()">RedTape</a>
 
 </nav>
-
-<div class="icons">
-
-<span>🔍</span>
-<span>🛒</span>
-
-</div>
 
 </header>
 
 <section class="hero">
 
 <h1>Premium Sneakers</h1>
-
 <p>Minimal • Aesthetic • Powerful</p>
-
-<button onclick="scrollToProducts()">Explore</button>
 
 </section>
 
-<section class="card">
+<section class="card-grid">
 
 <div class="card" onclick="filterPrice()">
-
-<img src="sneakers.jpeg">
-
 <h3>Under ₹1000</h3>
-
 </div>
 
 <div class="card" onclick="filterCampus()">
-
-<img src="campus-logo.png">
-
 <h3>Campus</h3>
-
 </div>
 
 <div class="card" onclick="filterAsian()">
-
-<img src="asian-logo.png">
-
 <h3>Asian</h3>
-
 </div>
 
 <div class="card" onclick="filterRedtape()">
-
-<img src="asian-logo.png">
-
-<h3>Redtape</h3>
-
+<h3>RedTape</h3>
 </div>
 
 </section>
 
 <section id="products" class="products"></section>
 
-<section id="productView" class="product-view"></section>
-
-<section id="checkout" class="checkout"></section>
+<section id="productView"></section>
 
 <script src="script.js"></script>
 
