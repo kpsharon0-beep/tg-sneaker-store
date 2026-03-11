@@ -1,3 +1,7 @@
+console.log("Sneaker Store JS Loaded");
+
+/* PRODUCTS DATABASE */
+
 const products=[
 
 {
@@ -47,7 +51,7 @@ name:"Bacan Multi Colour Sneakers Trendy Sports Shoes Classy Casual Shoes For Me
 price:799,
 brand:"Asian",
 img:"bacan-multicolour.jpg"
-}
+},
 
 {
 name:"Men's Sneakers for Casual Everyday Style",
@@ -76,14 +80,18 @@ price:1499,
 brand:"RedTape",
 img:"redtape-casual.jpg"
 }
-  
-]
+
+];
+
+
+/* RENDER PRODUCTS */
 
 function renderProducts(list){
 
-const container=document.getElementById("products")
-container.innerHTML=""
-  
+const container=document.getElementById("products");
+
+container.innerHTML="";
+
 list.forEach(p=>{
 
 container.innerHTML+=`
@@ -102,57 +110,62 @@ View
 
 </div>
 
-`
+`;
 
-})
+});
 
 }
 
-/* SHOW ONLY CAMPUS SHOES */
+
+/* FILTER CAMPUS */
 
 function filterCampus(){
 
-const campusProducts=products.filter(p=>p.brand==="Campus")
+const campusProducts=products.filter(p=>p.brand==="Campus");
 
-renderProducts(campusProducts)
-
-}
-
-/* SHOW SHOES UNDER ₹1000 */
-
-function filterPrice(){
-
-const cheap=products.filter(p=>p.price<=1000)
-
-renderProducts(cheap)
+renderProducts(campusProducts);
 
 }
 
-/* SHOW ONLY ASIAN SHOES */
+
+/* FILTER ASIAN */
 
 function filterAsian(){
 
-const asianProducts = products.filter(p => p.brand === "Asian")
+const asianProducts=products.filter(p=>p.brand==="Asian");
 
-renderProducts(asianProducts)
+renderProducts(asianProducts);
 
 }
 
-/* SHOW ONLY REDTAPE SHOES */
+
+/* FILTER REDTAPE */
 
 function filterRedtape(){
 
-const redtapeProducts = products.filter(p => p.brand === "RedTape")
+const redtapeProducts=products.filter(p=>p.brand==="RedTape");
 
-renderProducts(redtapeProducts)
+renderProducts(redtapeProducts);
 
 }
 
-/* PRODUCT VIEW PAGE */
+
+/* FILTER UNDER 1000 */
+
+function filterPrice(){
+
+const cheap=products.filter(p=>p.price<=1000);
+
+renderProducts(cheap);
+
+}
+
+
+/* PRODUCT VIEW */
 
 function viewProduct(name,price,img){
 
-document.getElementById("products").style.display="none"
+document.getElementById("products").style.display="none";
 
 document.getElementById("productView").innerHTML=
 
@@ -165,6 +178,8 @@ document.getElementById("productView").innerHTML=
 <h2>${name}</h2>
 
 <h3>₹${price}</h3>
+
+<p>Premium comfort sneaker designed for everyday style and durability.</p>
 
 <select>
 
@@ -184,9 +199,10 @@ Buy Now
 
 </div>
 
-`
+`;
 
 }
+
 
 /* CHECKOUT PAGE */
 
@@ -210,30 +226,48 @@ document.getElementById("productView").innerHTML=
 Pay Now
 </button>
 
-`
+`;
 
 }
 
-/* PAYMENT */
+
+/* PAYMENT SYSTEM */
 
 function pay(name,price){
+
+const customerName=document.getElementById("name").value;
+const phone=document.getElementById("phone").value;
+const address=document.getElementById("address").value;
+const pincode=document.getElementById("pincode").value;
 
 const order=`
 Sneaker Order
 
 Product: ${name}
 Price: ₹${price}
-`
+
+Customer: ${customerName}
+Phone: ${phone}
+Address: ${address}
+Pincode: ${pincode}
+`;
+
+/* UPI PAYMENT */
 
 window.location.href=
-`upi://pay?pa=abinavsdinesh24@fam&pn=SneakerStore&am=${price}`
+`upi://pay?pa=abinavsdinesh24@fam&pn=SneakerStore&am=${price}`;
+
+/* WHATSAPP ORDER */
 
 window.open(
 `https://wa.me/918281454227?text=${encodeURIComponent(order)}`
-)
+);
+
+/* EMAIL ORDER */
 
 window.open(
 `mailto:kpsharon0@gmail.com?subject=Sneaker Order&body=${encodeURIComponent(order)}`
-)
+);
 
 }
+```
