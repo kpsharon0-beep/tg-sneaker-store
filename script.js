@@ -23,7 +23,7 @@ img:"Untitled.jpeg"
 
 {
 name:"Asian Runner",
-price:1499,
+price:899,
 brand:"Asian",
 img:"asian1.jpg"
 },
@@ -33,6 +33,20 @@ name:"Asian Street Sneaker",
 price:1099,
 brand:"Asian",
 img:"asian2.jpg"
+},
+
+{
+name:"55 SAMA BLACK",
+price:999,
+brand:"Asian",
+img:"sama-black.jpg"
+},
+
+{
+name:"Bacan Multi Colour Sneakers Trendy Sports Shoes Classy Casual Shoes For Men",
+price:799,
+brand:"Asian",
+img:"bacan-multicolour.jpg"
 }
 
 ]
