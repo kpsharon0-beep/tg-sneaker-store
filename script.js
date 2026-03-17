@@ -6,6 +6,8 @@ const products=[
 
 {name:"Asian Runner",price:899,brand:"Asian",img:"asian1.jpg"},
 
+{name:"Asian thnder-07",price:999,brand:"Asian",img:"asian11.jpg"},
+
 {name:"Asian Street Sneaker",price:1099,brand:"Asian",img:"asian2.jpg"},
 
 {name:"55 SAMA BLACK",price:999,brand:"Asian",img:"sama-black.jpg"},
