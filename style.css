@@ -1,193 +1,115 @@
 body{
 font-family:Poppins;
 margin:0;
-background:linear-gradient(135deg,#ffe5ec,#e0f7ff);
+background:#f5f5f7;
 }
-
-/* NAVBAR */
 
 header{
-
 display:flex;
 justify-content:space-between;
-align-items:center;
-
 padding:15px 30px;
-
-background:rgba(255,255,255,0.35);
-
-backdrop-filter:blur(20px);
-
-box-shadow:0 10px 40px rgba(0,0,0,0.1);
-
+background:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
 position:sticky;
 top:0;
-
 }
 
-.logo{
-font-size:22px;
-font-weight:700;
-color:#ff4d6d;
+.logo{font-weight:700;}
+
+nav a{margin-left:20px;cursor:pointer;}
+
+.slider img{
+width:100%;
+height:300px;
+object-fit:cover;
 }
 
-nav a{
-margin:0 15px;
-text-decoration:none;
-color:#333;
-}
+.about{text-align:center;padding:40px;}
 
-nav a:hover{
-color:#ff4d6d;
-}
-
-/* HERO */
-
-.hero{
-text-align:center;
-padding:80px 20px;
-}
-
-/* FILTER GRID */
-
-.card-grid{
-
+.products{
 display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:20px;
 padding:20px;
-
 }
 
-.card{
-
+/* PREMIUM PRODUCT */
+.product-inner{
 background:white;
-padding:30px;
-border-radius:20px;
+padding:15px;
+border-radius:15px;
 text-align:center;
-cursor:pointer;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+
+border:2px solid transparent;
+background-image:linear-gradient(white,white),
+linear-gradient(135deg,#ff4d6d,#6a00ff,#00c3ff);
+background-clip:content-box,border-box;
 
 transition:0.3s;
-
 }
 
-.card:hover{
+.product-inner:hover{transform:scale(1.05);}
 
-transform:translateY(-5px) scale(1.05);
-
-}
-
-/* PRODUCTS GRID */
-
-.products{
-
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:25px;
-padding:25px;
-
-}
-
-/* PRODUCT CARD */
-
-.product{
-perspective:1000px;
-}
-
-.product-inner{
-
-background:white;
-padding:20px;
-border-radius:20px;
-
-transform-style:preserve-3d;
-transition:transform 0.3s;
-
-box-shadow:0 15px 40px rgba(0,0,0,0.1);
-
-text-align:center;
-
-}
-
-.product img{
-
-width:100%;
-border-radius:15px;
-
-transform:translateZ(40px);
-
-animation:float 4s infinite ease-in-out;
-
-}
-
-@keyframes float{
-
-0%{transform:translateY(0)}
-50%{transform:translateY(-10px)}
-100%{transform:translateY(0)}
-
-}
-
-.product h3{
-transform:translateZ(30px);
-}
-
-.product p{
-transform:translateZ(25px);
-}
+.product img{width:100%;border-radius:10px;}
 
 .product button{
-
-padding:10px 20px;
-border:none;
-border-radius:20px;
-background:#ff4d6d;
+margin-top:10px;
+padding:10px;
+background:black;
 color:white;
-cursor:pointer;
-
-transform:translateZ(35px);
-
+border:none;
 }
 
 /* PRODUCT PAGE */
-
-.nike-product{
-
-display:flex;
-flex-wrap:wrap;
-gap:40px;
-padding:40px;
-justify-content:center;
-
-}
-
-.nike-left img{
-width:350px;
-}
-
-.sizes button{
-
-margin:5px;
-padding:10px 15px;
-
-border-radius:10px;
-border:1px solid #ddd;
-
-}
+.nike-product{text-align:center;padding:30px;}
 
 .buy-btn{
-
-padding:14px 25px;
-
-background:#ff4d6d;
-
-border:none;
-
-border-radius:30px;
-
+background:red;
 color:white;
+padding:12px;
+border:none;
+}
 
-cursor:pointer;
+/* REVIEWS */
+#reviews p{
+background:#fff;
+padding:8px;
+margin:5px auto;
+border-radius:8px;
+width:80%;
+}
 
+/* ORDER */
+#orderBox{
+text-align:center;
+padding:20px;
+}
+
+#orderBox input{
+display:block;
+margin:10px auto;
+padding:10px;
+width:80%;
+max-width:300px;
+}
+
+/* RAIN */
+.sneaker-rain{
+position:fixed;
+top:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:9999;
+}
+
+.shoe{
+position:absolute;
+width:40px;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+0%{transform:translateY(-100px);}
+100%{transform:translateY(100vh);}
 }
