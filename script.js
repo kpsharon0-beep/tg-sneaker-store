@@ -1,197 +1,196 @@
-const products=[
+// 🔥 PRODUCTS
+const products = [
 
-{name:"Campus OG07",price:999,brand:"Campus",img:"og07.jpg"},
+{
+name:"Jordan Dior High",
+price:1999,
+brand:"Nike",
+img:"jordan1.jpg",
+desc:"Premium high-top sneaker with luxury finish.",
+reviews:["🔥 Crazy","Looks premium","Worth it","Comfort top","Best buy","Clean","🔥🔥","Nice fit","Loved it","Fast delivery"]
+},
 
-{name:"Campus OG30",price:1299,brand:"Campus",img:"og30.jpg"},
+{
+name:"Nike Dunk Ghost Rider",
+price:2000,
+brand:"Nike",
+img:"gostrider.jpg",
+desc:"Dark themed dunk for bold street style.",
+reviews:["Insane 🔥","Unique","Best dunk","Stylish","Comfort good","Solid","🔥","Cool look","Worth","Must buy"]
+},
 
-{name:"Asian Runner",price:899,brand:"Asian",img:"asian1.jpg"},
+{
+name:"Nike Chunky Dunky",
+price:1999,
+brand:"Nike",
+img:"chunky.jpg",
+desc:"Colorful sneaker for standout fashion.",
+reviews:["Crazy colors","Fun","Unique","Comfort","🔥🔥","Trendy","Good","Best reels","Cool","Nice"]
+},
 
-{name:"Asian Street Sneaker",price:1099,brand:"Asian",img:"asian2.jpg"},
-
-{name:"55 SAMA BLACK",price:999,brand:"Asian",img:"sama-black.jpg"},
-
-{name:"Bacan Multi Colour Sneakers",price:799,brand:"Asian",img:"bacan-multicolour.jpg"},
-
-{name:"RedTape Casual Sneaker",price:1499,brand:"RedTape",img:"redtape.jpg"}
+{
+name:"RedTape Lifestyle",
+price:1999,
+brand:"RedTape",
+img:"redtape.jpg",
+desc:"Comfort casual everyday sneaker.",
+reviews:["Good","Comfort","Nice","Value","🔥","Cool","Fit good","Best","Affordable","Solid"]
+}
 
 ];
 
-function renderProducts(list){
-
 const container=document.getElementById("products");
+
+// HOME
+function showHome(){filterNike();}
+
+// STORE
+function showStore(){renderProducts(products);}
+
+// FILTERS
+function filterNike(){renderProducts(products.filter(p=>p.brand==="Nike"));}
+function filterRedtape(){renderProducts(products.filter(p=>p.brand==="RedTape"));}
+
+// RENDER
+function renderProducts(list){
+container.innerHTML="";
+document.getElementById("productView").innerHTML="";
+document.getElementById("orderBox").innerHTML="";
+
+list.forEach(p=>{
+container.innerHTML+=`
+<div class="product">
+<div class="product-inner">
+<img src="${p.img}">
+<h3>${p.name}</h3>
+<p>₹${p.price}</p>
+<button onclick="viewProduct('${p.name}',${p.price},'${p.img}')">View</button>
+</div>
+</div>
+`;
+});
+}
+
+// VIEW PRODUCT
+function viewProduct(name,price,img){
+const p=products.find(x=>x.name===name);
 
 container.innerHTML="";
 
-list.forEach(p=>{
-
-container.innerHTML+=`
-
-<div class="product">
-
-<div class="product-inner">
-
-<img src="${p.img}">
-
-<h3>${p.name}</h3>
-
-<p>₹${p.price}</p>
-
-<button onclick="viewProduct('${p.name}',${p.price},'${p.img}')">
-View
-</button>
-
-</div>
-
-</div>
-
-`;
-
-});
-
-enable3D();
-
-}
-
-function filterCampus(){
-renderProducts(products.filter(p=>p.brand==="Campus"));
-}
-
-function filterAsian(){
-renderProducts(products.filter(p=>p.brand==="Asian"));
-}
-
-function filterRedtape(){
-renderProducts(products.filter(p=>p.brand==="RedTape"));
-}
-
-function filterPrice(){
-renderProducts(products.filter(p=>p.price<=1000));
-}
-
-function viewProduct(name,price,img){
-
-document.getElementById("products").style.display="none";
-
-document.getElementById("productView").innerHTML=
-
-`
-
+document.getElementById("productView").innerHTML=`
 <div class="nike-product">
+<img src="${img}" style="width:250px">
+<h2>${name}</h2>
+<h3>₹${price}</h3>
+<p>${p.desc}</p>
 
-<div class="nike-left">
-
-<img src="${img}">
-
-</div>
-
-<div>
-
-<h1>${name}</h1>
-
-<h2>₹${price}</h2>
-
-<p>Premium everyday sneaker with comfort and durability.</p>
-
-<div class="sizes">
-
-<button>7</button>
-<button>8</button>
-<button>9</button>
-<button>10</button>
-
-</div>
+<select id="size">
+<option>7</option>
+<option>8</option>
+<option>9</option>
+<option>10</option>
+</select>
 
 <br>
 
-<button class="buy-btn" onclick="checkout('${name}',${price})">
-Buy Now
-</button>
+<button class="buy-btn" onclick="openOrder('${name}',${price}')">Buy</button>
 
+<h3>Reviews ⭐</h3>
+<div id="reviews">
+${p.reviews.map(r=>`<p>⭐ ${r}</p>`).join("")}
 </div>
 
+<input id="reviewInput" placeholder="Write review">
+<button onclick="addReview('${name}')">Post</button>
+
+<br><br>
+<button onclick="showStore()">Back</button>
 </div>
-
 `;
-
 }
 
-function checkout(name,price){
+// ADD REVIEW
+function addReview(name){
+const txt=document.getElementById("reviewInput").value;
+if(!txt)return alert("Write review");
 
-document.getElementById("productView").innerHTML=
+const p=products.find(x=>x.name===name);
+p.reviews.push(txt);
 
-`
+viewProduct(p.name,p.price,p.img);
+}
 
-<h2>Delivery Details</h2>
+// ORDER FORM
+function openOrder(name,price){
+document.getElementById("orderBox").innerHTML=`
+<h3>Enter Details</h3>
+<input id="custName" placeholder="Name">
+<input id="phone" placeholder="Phone">
+<input id="address" placeholder="Address">
 
-<input id="name" placeholder="Name"><br><br>
-
-<input id="phone" placeholder="Phone"><br><br>
-
-<input id="address" placeholder="Address"><br><br>
-
-<input id="pincode" placeholder="Pincode"><br><br>
-
-<button onclick="pay('${name}',${price})">
-Pay Now
+<button onclick="confirmOrder('${name}',${price})">
+Confirm
 </button>
-
 `;
-
 }
 
-function pay(name,price){
+// FINAL ORDER
+function confirmOrder(name,price){
+const n=document.getElementById("custName").value;
+const ph=document.getElementById("phone").value;
+const ad=document.getElementById("address").value;
+const size=document.getElementById("size").value;
 
-const order=
+if(!n||!ph||!ad)return alert("Fill all");
 
-`Sneaker Order
+// 🎉 rain
+startRain();
 
-Product:${name}
-Price:${price}`;
+const msg=`Order:
+${name}
+Price:${price}
+Size:${size}
+Name:${n}
+Phone:${ph}
+Address:${ad}`;
 
-window.location.href=
-`upi://pay?pa=abinavsdinesh24@fam&pn=SneakerStore&am=${price}`;
-
-window.open(
-`https://wa.me/918281454227?text=${encodeURIComponent(order)}`
-);
-
-window.open(
-`mailto:kpsharon0@gmail.com?subject=Sneaker Order&body=${encodeURIComponent(order)}`
-);
-
+setTimeout(()=>{
+window.location.href=`https://wa.me/918281454227?text=${encodeURIComponent(msg)}`;
+},2000);
 }
 
-function enable3D(){
+// 🎞️ SLIDER
+const slides=[
+"jordan1.jpg",
+"gostrider.jpg",
+"chunky.jpg"
+];
 
-document.querySelectorAll(".product").forEach(card=>{
+let i=0;
+setInterval(()=>{
+i=(i+1)%slides.length;
+document.getElementById("slideImg").src=slides[i];
+},2500);
 
-card.addEventListener("mousemove",e=>{
+// 🎉 RAIN
+function startRain(){
+const rain=document.createElement("div");
+rain.className="sneaker-rain";
+document.body.appendChild(rain);
 
-const rect=card.getBoundingClientRect();
+for(let i=0;i<100;i++){
+const img=document.createElement("img");
+img.src="jordan1.jpg";
+img.className="shoe";
 
-const x=e.clientX-rect.left;
-const y=e.clientY-rect.top;
+img.style.left=Math.random()*100+"%";
+img.style.animationDuration=(Math.random()*2+2)+"s";
 
-const centerX=rect.width/2;
-const centerY=rect.height/2;
-
-const rotateX=(y-centerY)/10;
-const rotateY=(centerX-x)/10;
-
-card.querySelector(".product-inner").style.transform=
-`rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-
-});
-
-card.addEventListener("mouseleave",()=>{
-
-card.querySelector(".product-inner").style.transform=
-"rotateX(0) rotateY(0)";
-
-});
-
-});
-
+rain.appendChild(img);
 }
 
-renderProducts(products);
+setTimeout(()=>rain.remove(),2500);
+}
+
+// START
+showHome();
