@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SneakerX</title>
+<title>SneakerX Elite</title>
 
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -13,27 +13,43 @@
 
 <header>
 <div class="logo">SneakerX</div>
+
 <nav>
 <a onclick="showHome()">Home</a>
 <a onclick="showStore()">Store</a>
 <a onclick="filterNike()">Hype</a>
-<a onclick="filterRedtape()">Budget</a>
 </nav>
 </header>
 
+<!-- 🔍 SEARCH -->
+<section class="top-bar">
+<input type="text" placeholder="Search sneakers..." oninput="searchProduct(this.value)">
+</section>
+
+<!-- 🎞️ SLIDER -->
 <section class="slider">
 <img id="slideImg">
 </section>
 
-<section class="about">
-<h2>Premium Sneakers</h2>
-<p>Street • Clean • Budget Luxury</p>
+<!-- 🎯 FILTER -->
+<section class="filters">
+<select onchange="filterBrand(this.value)">
+<option value="all">All</option>
+<option value="Nike">Nike</option>
+<option value="RedTape">RedTape</option>
+<option value="Campus">Campus</option>
+<option value="Asian">Asian</option>
+</select>
+
+<select onchange="filterPrice(this.value)">
+<option value="all">Price</option>
+<option value="1000">Under ₹1000</option>
+<option value="2000">Under ₹2000</option>
+</select>
 </section>
 
 <section id="products" class="products"></section>
-
 <section id="productView"></section>
-
 <section id="orderBox"></section>
 
 <script src="script.js"></script>
