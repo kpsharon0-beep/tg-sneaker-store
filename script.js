@@ -4,34 +4,34 @@ let wishlist=[];
 const products=[
 
 // NIKE
-{name:"Jordan Dior High",price:1999,brand:"Nike",img:"jordan1.jpg",stock:3,desc:"Luxury high-top sneaker.",reviews:["🔥 insane","premium","worth","clean","top","🔥🔥","best","fit","nice","fast"]},
+{name:"Jordan Dior High",price:1999,mrp:3999,brand:"Nike",img:"jordan1.jpg",stock:3,desc:"Luxury high-top sneaker.",reviews:["🔥 insane","premium","worth","clean","top","🔥🔥","best","fit","nice","fast"]},
 
-{name:"Nike Dunk Ghost Rider",price:2000,brand:"Nike",img:"gostrider.jpg",stock:2,desc:"Dark bold sneaker.",reviews:["crazy","🔥","unique","best","cool","fit","good","🔥🔥","nice","worth"]},
+{name:"Nike Dunk Ghost Rider",price:2000,mrp:3999,brand:"Nike",img:"gostrider.jpg",stock:2,desc:"Dark bold sneaker.",reviews:["crazy","🔥","unique","best","cool","fit","good","🔥🔥","nice","worth"]},
 
-{name:"Nike Chunky Dunky",price:1999,brand:"Nike",img:"chunky.jpg",stock:4,desc:"Colorful hype sneaker.",reviews:["fun","🔥","cool","trendy","nice","good","🔥🔥","fit","best","value"]},
+{name:"Nike Chunky Dunky",price:1999,mrp:3999,brand:"Nike",img:"chunky.jpg",stock:4,desc:"Colorful hype sneaker.",reviews:["fun","🔥","cool","trendy","nice","good","🔥🔥","fit","best","value"]},
 
 // REDTAPE
-{name:"RedTape Lifestyle",price:1999,brand:"RedTape",img:"redtape.jpg",stock:5,desc:"Daily comfort sneaker.",reviews:["good","🔥","nice","fit","value","best","cool","clean","solid","worth"]},
+{name:"RedTape Lifestyle",price:1999,mrp:2999,brand:"RedTape",img:"redtape.jpg",stock:5,desc:"Daily comfort sneaker.",reviews:["good","🔥","nice","fit","value","best","cool","clean","solid","worth"]},
 
-{name:"RedTape Casual",price:1899,brand:"RedTape",img:"redtape2.jpg",stock:6,desc:"Casual stylish sneaker.",reviews:["cool","🔥","nice","good","fit","clean","value","best","comfort","solid"]},
+{name:"RedTape Casual",price:1899,mrp:2799,brand:"RedTape",img:"redtape2.jpg",stock:6,desc:"Casual stylish sneaker.",reviews:["cool","🔥","nice","good","fit","clean","value","best","comfort","solid"]},
 
-{name:"RedTape Comfort",price:1999,brand:"RedTape",img:"redtape3.jpg",stock:4,desc:"Extra comfort sneaker.",reviews:["soft","🔥","nice","good","best","fit","clean","value","cool","top"]},
+{name:"RedTape Comfort",price:1999,mrp:2999,brand:"RedTape",img:"redtape3.jpg",stock:4,desc:"Extra comfort sneaker.",reviews:["soft","🔥","nice","good","best","fit","clean","value","cool","top"]},
 
-{name:"RedTape Style",price:1799,brand:"RedTape",img:"redtape4.jpg",stock:7,desc:"Modern street sneaker.",reviews:["stylish","🔥","cool","nice","good","fit","clean","value","best","love"]},
+{name:"RedTape Style",price:1799,mrp:2599,brand:"RedTape",img:"redtape4.jpg",stock:7,desc:"Modern street sneaker.",reviews:["stylish","🔥","cool","nice","good","fit","clean","value","best","love"]},
 
 // CAMPUS
-{name:"Campus OG07",price:999,brand:"Campus",img:"og07.jpg",stock:10,desc:"Budget sneaker.",reviews:["cheap","🔥","nice","comfort","best","fit","good","value","cool","worth"]},
+{name:"Campus OG07",price:999,mrp:1999,brand:"Campus",img:"og07.jpg",stock:10,desc:"Budget sneaker.",reviews:["cheap","🔥","nice","comfort","best","fit","good","value","cool","worth"]},
 
-{name:"Campus OG30",price:1299,brand:"Campus",img:"og30.jpg",stock:8,desc:"Sporty sneaker.",reviews:["strong","🔥","nice","good","comfort","best","fit","value","cool","love"]},
+{name:"Campus OG30",price:1299,mrp:1999,brand:"Campus",img:"og30.jpg",stock:8,desc:"Sporty sneaker.",reviews:["strong","🔥","nice","good","comfort","best","fit","value","cool","love"]},
 
 // ASIAN
-{name:"Asian Runner",price:899,brand:"Asian",img:"asian1.jpg",stock:12,desc:"Lightweight runner.",reviews:["light","🔥","nice","comfort","good","fit","best","cheap","cool","value"]},
+{name:"Asian Runner",price:899,mrp:1499,brand:"Asian",img:"asian1.jpg",stock:12,desc:"Lightweight runner.",reviews:["light","🔥","nice","comfort","good","fit","best","cheap","cool","value"]},
 
-{name:"Asian Street Sneaker",price:1099,brand:"Asian",img:"asian2.jpg",stock:9,desc:"Street sneaker.",reviews:["cool","🔥","nice","good","fit","comfort","best","value","clean","love"]},
+{name:"Asian Street Sneaker",price:1099,mrp:1699,brand:"Asian",img:"asian2.jpg",stock:9,desc:"Street sneaker.",reviews:["cool","🔥","nice","good","fit","comfort","best","value","clean","love"]},
 
-{name:"55 SAMA BLACK",price:999,brand:"Asian",img:"sama-black.jpg",stock:11,desc:"Minimal black sneaker.",reviews:["clean","🔥","nice","good","fit","comfort","best","value","cool","love"]},
+{name:"55 SAMA BLACK",price:999,mrp:1599,brand:"Asian",img:"sama-black.jpg",stock:11,desc:"Minimal black sneaker.",reviews:["clean","🔥","nice","good","fit","comfort","best","value","cool","love"]},
 
-{name:"Bacan Multi Colour",price:799,brand:"Asian",img:"bacan-multicolour.jpg",stock:13,desc:"Colorful sneaker.",reviews:["colorful","🔥","nice","good","fit","comfort","best","cheap","cool","love"]}
+{name:"Bacan Multi Colour",price:799,mrp:1299,brand:"Asian",img:"bacan-multicolour.jpg",stock:13,desc:"Colorful sneaker.",reviews:["colorful","🔥","nice","good","fit","comfort","best","cheap","cool","love"]}
 
 ];
 
@@ -39,22 +39,12 @@ const container=document.getElementById("products");
 
 // HOME
 function showHome(){filterNike();}
-
-// STORE
 function showStore(){renderProducts(products);}
 
 // FILTERS
 function filterNike(){renderProducts(products.filter(p=>p.brand==="Nike"));}
-
-function filterBrand(b){
-if(b==="all") return renderProducts(products);
-renderProducts(products.filter(p=>p.brand===b));
-}
-
-function filterPrice(p){
-if(p==="all") return renderProducts(products);
-renderProducts(products.filter(x=>x.price<=p));
-}
+function filterBrand(b){b==="all"?renderProducts(products):renderProducts(products.filter(p=>p.brand===b));}
+function filterPrice(p){p==="all"?renderProducts(products):renderProducts(products.filter(x=>x.price<=p));}
 
 // SEARCH
 function searchProduct(q){
@@ -64,11 +54,7 @@ renderProducts(products.filter(p=>p.name.toLowerCase().includes(q)));
 
 // WISHLIST
 function toggleWish(name){
-if(wishlist.includes(name)){
-wishlist=wishlist.filter(x=>x!==name);
-}else{
-wishlist.push(name);
-}
+wishlist.includes(name)?wishlist=wishlist.filter(x=>x!==name):wishlist.push(name);
 alert("Wishlist updated ❤️");
 }
 
@@ -79,15 +65,22 @@ document.getElementById("productView").innerHTML="";
 document.getElementById("orderBox").innerHTML="";
 
 list.forEach(p=>{
+const off=Math.round((1-p.price/p.mrp)*100);
+
 container.innerHTML+=`
 <div class="product">
 <div class="product-inner">
 
 <div class="wishlist" onclick="toggleWish('${p.name}')">❤️</div>
+<div class="discount">${off}% OFF</div>
 
 <img src="${p.img}">
 <h3>${p.name}</h3>
-<p>₹${p.price}</p>
+
+<p>
+<span style="text-decoration:line-through;color:gray;">₹${p.mrp}</span><br>
+<span style="color:#00ffae;">₹${p.price}</span>
+</p>
 
 <p style="color:red;">Only ${p.stock} left</p>
 
@@ -102,13 +95,21 @@ container.innerHTML+=`
 // VIEW
 function viewProduct(name,price,img){
 const p=products.find(x=>x.name===name);
+const off=Math.round((1-p.price/p.mrp)*100);
+
 container.innerHTML="";
 
 document.getElementById("productView").innerHTML=`
 <div class="nike-product">
 <img src="${img}" style="width:250px">
 <h2>${name}</h2>
-<h3>₹${price}</h3>
+
+<h3>
+<span style="text-decoration:line-through;color:gray;">₹${p.mrp}</span><br>
+<span style="color:#00ffae;">₹${price}</span>
+</h3>
+
+<p style="color:orange;">🔥 ${off}% OFF</p>
 <p>${p.desc}</p>
 
 <select id="size">
@@ -162,7 +163,7 @@ if(!n||!ph||!ad)return alert("fill all");
 
 startRain();
 
-const msg=`Order:
+const msg=`🌙 Eid Order
 ${name}
 ₹${price}
 Size:${size}
@@ -183,7 +184,7 @@ i=(i+1)%slides.length;
 document.getElementById("slideImg").src=slides[i];
 },2500);
 
-// RAIN
+// 🎉 RAIN
 function startRain(){
 const rain=document.createElement("div");
 rain.className="sneaker-rain";
@@ -201,5 +202,18 @@ rain.appendChild(img);
 setTimeout(()=>rain.remove(),2500);
 }
 
-// START
+// ✨ STARS
+function createStars(){
+const stars=document.getElementById("stars");
+for(let i=0;i<100;i++){
+const s=document.createElement("div");
+s.className="star";
+s.style.top=Math.random()*100+"%";
+s.style.left=Math.random()*100+"%";
+s.style.animationDuration=(Math.random()*3+1)+"s";
+stars.appendChild(s);
+}
+}
+
+createStars();
 showHome();
