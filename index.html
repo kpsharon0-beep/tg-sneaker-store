@@ -11,43 +11,40 @@
 
 <body>
 
-<!-- 🌙 EID BAR -->
 <div class="eid-banner">🌙 Eid Mubarak • Up to 50% OFF</div>
 
 <header>
 <div class="logo">SneakerX</div>
 <nav>
 <a onclick="goHome()">Home</a>
-<a onclick="showStore()">Shop</a>
+<a onclick="exploreNow()">Shop</a>
 <a onclick="filterNike()">Hype</a>
 </nav>
 </header>
 
-<!-- 👑 HERO -->
+<!-- HERO -->
 <section class="hero">
 <h1>Luxury Sneakers</h1>
 <p>Minimal • Premium • Exclusive</p>
-<button onclick="showStore()">Explore Collection</button>
+<button onclick="exploreNow()">Explore Collection</button>
 </section>
 
-<!-- 🔥 FEATURED -->
+<!-- FEATURED -->
 <section class="featured">
 <h2>🔥 Hype Drop</h2>
-
 <div class="featured-box" onclick="viewProduct('Nike Dunk Hayley Wilson',1999,'hayley.jpg')">
 <img src="hayley.jpg">
 <h3>Hayley Wilson Dunk</h3>
 <p>₹1999</p>
 </div>
-
 </section>
 
-<!-- 🔍 SEARCH -->
+<!-- SEARCH -->
 <section class="top-bar">
 <input type="text" placeholder="Search..." oninput="searchProduct(this.value)">
 </section>
 
-<!-- 🎯 FILTER -->
+<!-- FILTER -->
 <section class="filters">
 <select onchange="filterBrand(this.value)">
 <option value="all">All</option>
