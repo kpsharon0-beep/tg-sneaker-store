@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SneakerX Elite</title>
+<title>SneakerX Luxury</title>
 
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -11,25 +11,43 @@
 
 <body>
 
-<div class="eid-banner">🌙 Eid Mubarak • Up to 50% OFF 🔥</div>
+<!-- 🌙 EID BAR -->
+<div class="eid-banner">🌙 Eid Mubarak • Up to 50% OFF</div>
 
 <header>
 <div class="logo">SneakerX</div>
 <nav>
-<a onclick="showHome()">Home</a>
-<a onclick="showStore()">Store</a>
+<a onclick="goHome()">Home</a>
+<a onclick="showStore()">Shop</a>
 <a onclick="filterNike()">Hype</a>
 </nav>
 </header>
 
+<!-- 👑 HERO -->
+<section class="hero">
+<h1>Luxury Sneakers</h1>
+<p>Minimal • Premium • Exclusive</p>
+<button onclick="showStore()">Explore Collection</button>
+</section>
+
+<!-- 🔥 FEATURED -->
+<section class="featured">
+<h2>🔥 Hype Drop</h2>
+
+<div class="featured-box" onclick="viewProduct('Nike Dunk Hayley Wilson',1999,'hayley.jpg')">
+<img src="hayley.jpg">
+<h3>Hayley Wilson Dunk</h3>
+<p>₹1999</p>
+</div>
+
+</section>
+
+<!-- 🔍 SEARCH -->
 <section class="top-bar">
-<input type="text" placeholder="Search sneakers..." oninput="searchProduct(this.value)">
+<input type="text" placeholder="Search..." oninput="searchProduct(this.value)">
 </section>
 
-<section class="slider">
-<img id="slideImg">
-</section>
-
+<!-- 🎯 FILTER -->
 <section class="filters">
 <select onchange="filterBrand(this.value)">
 <option value="all">All</option>
@@ -48,9 +66,6 @@
 
 <section id="products" class="products"></section>
 <section id="productView"></section>
-<section id="orderBox"></section>
-
-<div class="stars" id="stars"></div>
 
 <script src="script.js"></script>
 </body>
