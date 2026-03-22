@@ -3,6 +3,7 @@ margin:0;
 font-family:Poppins;
 background:#000;
 color:white;
+scroll-behavior:smooth;
 }
 
 /* EID */
@@ -11,7 +12,6 @@ text-align:center;
 padding:8px;
 background:#111;
 color:gold;
-font-size:14px;
 }
 
 /* NAV */
@@ -26,6 +26,7 @@ nav a{
 margin-left:20px;
 cursor:pointer;
 color:#aaa;
+transition:0.3s;
 }
 
 nav a:hover{color:white;}
@@ -34,22 +35,17 @@ nav a:hover{color:white;}
 .hero{
 text-align:center;
 padding:100px 20px;
+opacity:0;
+transform:translateY(40px);
+animation:fadeUp 1s ease forwards;
 }
 
-.hero h1{
-font-size:40px;
-letter-spacing:2px;
-}
-
-.hero p{
-color:#888;
-margin:10px 0 20px;
-}
+.hero h1{font-size:40px;}
+.hero p{color:#888;margin:10px 0 20px;}
 
 .hero button{
 padding:12px 30px;
 border-radius:30px;
-border:none;
 background:white;
 color:black;
 }
@@ -58,6 +54,10 @@ color:black;
 .featured{
 text-align:center;
 padding:40px;
+opacity:0;
+transform:translateY(40px);
+animation:fadeUp 1s ease forwards;
+animation-delay:0.3s;
 }
 
 .featured-box{
@@ -65,7 +65,7 @@ display:inline-block;
 padding:20px;
 border:1px solid #333;
 border-radius:15px;
-transition:0.3s;
+transition:0.4s;
 cursor:pointer;
 }
 
@@ -73,9 +73,7 @@ cursor:pointer;
 transform:scale(1.05);
 }
 
-.featured-box img{
-width:220px;
-}
+.featured-box img{width:220px;}
 
 /* SEARCH */
 .top-bar{text-align:center;padding:10px;}
@@ -94,11 +92,6 @@ gap:10px;
 padding:10px;
 }
 
-.filters select{
-padding:8px;
-border-radius:8px;
-}
-
 /* PRODUCTS */
 .products{
 display:grid;
@@ -107,11 +100,16 @@ gap:20px;
 padding:20px;
 }
 
+.product{
+opacity:0;
+transform:translateY(40px);
+animation:fadeUp 0.6s ease forwards;
+}
+
 .product-inner{
 background:#111;
 padding:15px;
 border-radius:15px;
-text-align:center;
 border:1px solid #222;
 transition:0.3s;
 }
@@ -120,9 +118,7 @@ transition:0.3s;
 transform:translateY(-5px);
 }
 
-.product img{
-width:100%;
-}
+.product img{width:100%;}
 
 /* BUTTON */
 button{
@@ -132,5 +128,12 @@ border-radius:10px;
 background:white;
 color:black;
 cursor:pointer;
-margin-top:10px;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
