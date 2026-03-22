@@ -219,7 +219,10 @@ renderProducts(products.filter(p=>p.price<=Number(price)));
 // SEARCH
 function searchProduct(q){
 q=q.toLowerCase();
-renderProducts(products.filter(p=>p.name.toLowerCase().includes(q)));
+
+renderProducts(
+products.filter(p=>p.name.toLowerCase().includes(q))
+);
 }
 
 // RENDER
