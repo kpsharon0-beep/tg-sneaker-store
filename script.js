@@ -200,16 +200,22 @@ function filterNike(){
 renderProducts(products.filter(p=>p.brand==="Nike"));
 }
 
-function filterBrand(b){
-if(b==="all") return renderProducts(products);
-renderProducts(products.filter(p=>p.brand===b));
+function filterBrand(brand){
+if(brand==="all"){
+renderProducts(products);
+return;
+}
+renderProducts(products.filter(p=>p.brand===brand));
 }
 
-function filterPrice(p){
-if(p==="all") return renderProducts(products);
-renderProducts(products.filter(x=>x.price<=p));
+function filterPrice(price){
+if(price==="all"){
+renderProducts(products);
+return;
 }
 
+renderProducts(products.filter(p=>p.price<=Number(price)));
+}
 // SEARCH
 function searchProduct(q){
 q=q.toLowerCase();
