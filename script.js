@@ -5,7 +5,7 @@ const products=[
 {name:"Nike Dunk Ghost Rider",price:2000,mrp:3999,brand:"Nike",img:"gostrider.jpg",desc:"Dark"},
 {name:"Nike Chunky Dunky",price:1999,mrp:3999,brand:"Nike",img:"chunky.jpg",desc:"Colorful"},
 
-{name:"RedTape Lifestyle",price:1999,mrp:2999,brand:"RedTape",img:"redtape.jpg"},
+{name:"RedTape Lifestyle",price:1999,mrp:2999,brand:"RedTape",img:"radtape-lifestyle.jpg"},
 {name:"RedTape Casual",price:1899,mrp:2799,brand:"RedTape",img:"redtape2.jpg"},
 {name:"RedTape Comfort",price:1999,mrp:2999,brand:"RedTape",img:"redtape3.jpg"},
 {name:"RedTape Style",price:1799,mrp:2599,brand:"RedTape",img:"redtape4.jpg"},
