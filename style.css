@@ -5,14 +5,12 @@ background:radial-gradient(circle at top,#0f2027,#000);
 color:white;
 }
 
-/* 🌙 EID BANNER */
+/* 🌙 EID */
 .eid-banner{
 text-align:center;
 padding:10px;
-background:linear-gradient(90deg,#0f2027,#203a43,#2c5364);
-color:#ffd700;
-font-weight:600;
-box-shadow:0 0 20px rgba(255,215,0,0.4);
+background:#111;
+color:gold;
 }
 
 /* NAV */
@@ -21,38 +19,13 @@ display:flex;
 justify-content:space-between;
 padding:15px 30px;
 background:rgba(255,255,255,0.05);
-backdrop-filter:blur(15px);
 }
-
-nav a{margin-left:20px;cursor:pointer;color:white;}
 
 /* SEARCH */
 .top-bar{text-align:center;padding:15px;}
 .top-bar input{
 width:80%;
-max-width:400px;
 padding:12px;
-border-radius:12px;
-border:none;
-}
-
-/* SLIDER */
-.slider img{
-width:100%;
-height:250px;
-object-fit:cover;
-}
-
-/* FILTER */
-.filters{
-display:flex;
-justify-content:center;
-gap:10px;
-padding:15px;
-}
-
-.filters select{
-padding:10px;
 border-radius:10px;
 border:none;
 }
@@ -65,15 +38,13 @@ gap:20px;
 padding:20px;
 }
 
-/* 💎 LUXURY CARD */
 .product-inner{
 position:relative;
-background:rgba(255,255,255,0.05);
+background:#111;
 padding:15px;
 border-radius:15px;
 text-align:center;
 border:1px solid rgba(255,255,255,0.2);
-box-shadow:0 0 20px rgba(255,255,255,0.1);
 transition:0.3s;
 }
 
@@ -84,7 +55,7 @@ width:100%;
 border-radius:10px;
 }
 
-/* 🍏 BUTTON */
+/* BUTTON */
 button{
 padding:10px;
 border:none;
@@ -95,7 +66,17 @@ cursor:pointer;
 margin-top:10px;
 }
 
-/* ❤️ */
+/* BADGES */
+.discount{
+position:absolute;
+top:10px;
+left:10px;
+background:red;
+padding:5px;
+border-radius:5px;
+font-size:12px;
+}
+
 .wishlist{
 position:absolute;
 top:10px;
@@ -103,37 +84,16 @@ right:10px;
 cursor:pointer;
 }
 
-/* 🔥 DISCOUNT */
-.discount{
-position:absolute;
-top:10px;
-left:10px;
-background:red;
-padding:5px 8px;
-border-radius:6px;
-font-size:12px;
-}
-
-/* PRODUCT PAGE */
+/* PRODUCT VIEW */
 .nike-product{text-align:center;padding:20px;}
 
 #reviews p{
 background:#222;
-padding:8px;
-margin:5px;
-border-radius:8px;
+padding:5px;
+border-radius:5px;
 }
 
-/* ORDER */
-#orderBox input{
-display:block;
-margin:10px auto;
-padding:10px;
-width:80%;
-max-width:300px;
-}
-
-/* 🎉 RAIN */
+/* RAIN */
 .sneaker-rain{
 position:fixed;
 top:0;
@@ -153,30 +113,11 @@ animation:fall linear forwards;
 100%{transform:translateY(100vh);}
 }
 
-/* ✨ STARS */
-.stars{
-position:fixed;
-width:100%;
-height:100%;
-top:0;
-left:0;
-pointer-events:none;
-}
-
+/* STARS */
 .star{
 position:absolute;
 width:2px;
 height:2px;
 background:white;
 animation:twinkle 2s infinite;
-}
-
-@keyframes twinkle{
-0%{opacity:0.2;}
-50%{opacity:1;}
-100%{opacity:0.2;}
-}
-@keyframes fall{
-0%{transform:translateY(-100px);}
-100%{transform:translateY(100vh);}
 }
