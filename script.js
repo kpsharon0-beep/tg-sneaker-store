@@ -71,7 +71,7 @@ name:"RedTape Lifestyle",
 price:1999,
 mrp:2999,
 brand:"RedTape",
-img:"redtape.jpg",
+img:"radtape-lifestyle.jpg",
 stock:5,
 desc:"Daily wear sneaker.",
 reviews:["good","nice","value"]
