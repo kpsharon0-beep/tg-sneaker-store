@@ -8,7 +8,7 @@ const products=[
 {name:"RedTape Lifestyle",price:1999,mrp:2999,brand:"RedTape",img:"radtape-lifestyle.jpg"},
 {name:"RedTape Casual",price:1899,mrp:2799,brand:"RedTape",img:"redtape-casual.jpg"},
 {name:"RedTape Comfort",price:1999,mrp:2999,brand:"RedTape",img:"redtape-comfort.jpg"},
-{name:"RedTape Style",price:1799,mrp:2599,brand:"RedTape",img:"redtape4.jpg"},
+{name:"RedTape Style",price:1799,mrp:2599,brand:"RedTape",img:"redtape-style.jpg"},
 
 {name:"Campus OG07",price:999,mrp:1999,brand:"Campus",img:"og07.jpg"},
 {name:"Campus OG30",price:1299,mrp:1999,brand:"Campus",img:"og30.jpg"},
