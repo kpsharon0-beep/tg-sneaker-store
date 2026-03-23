@@ -4,7 +4,8 @@ const products=[
 {name:"Jordan Dior High",price:1999,mrp:3999,brand:"Nike",img:"jordan1.jpg",desc:"Luxury"},
 {name:"Nike Dunk Ghost Rider",price:2000,mrp:3999,brand:"Nike",img:"gostrider.jpg",desc:"Dark"},
 {name:"Nike Chunky Dunky",price:1999,mrp:3999,brand:"Nike",img:"chunky.jpg",desc:"Colorful"},
-
+{name:"nike air jordan 1 retro low zion williamson voodoo price",price:3499,mrp:4999,brand:"Nike",img:"retro11.jpg",desc:"rare"},
+  
 {name:"RedTape Lifestyle",price:1999,mrp:2999,brand:"RedTape",img:"radtape-lifestyle.jpg"},
 {name:"RedTape Casual",price:1899,mrp:2799,brand:"RedTape",img:"redtape-casual.jpg"},
 {name:"RedTape Comfort",price:1999,mrp:2999,brand:"RedTape",img:"redtape-comfort.jpg"},
