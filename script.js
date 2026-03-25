@@ -25,6 +25,29 @@ reviews:[
 "10/10"
 ]
 },
+
+{
+name:"Nike Dunk Low Travis Scott",
+price:1999,
+mrp:3999,
+brand:"Nike",
+img:"jarvis11.jpg",
+stock:3,
+desc:"Looking for sneakers that steal the spotlight without emptying your pockets? Meet the Travis Scott Dunk Low — the ultimate blend of bold style and unbeatable value. With its eye-catching bandana print and signature Travis Scott design twists, this pair delivers a look that’s truly one of a kind. Built for everyday comfort with a premium feel.",
+reviews:[
+"🔥 insane hype",
+"best looking dunk",
+"crazy design",
+"premium feel",
+"worth it",
+"🔥🔥🔥",
+"unique af",
+"must cop",
+"10/10",
+"clean finish"
+],
+hype:true
+},
   
 {name:"RedTape Lifestyle",price:1999,mrp:2999,brand:"RedTape",img:"radtape-lifestyle.jpg"},
 {name:"RedTape Casual",price:1899,mrp:2799,brand:"RedTape",img:"redtape-casual.jpg"},
