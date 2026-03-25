@@ -48,6 +48,8 @@ reviews:[
 ],
 hype:true
 },
+
+{name:"puma palermo",price:2499,mrp:4999,brand:"puma",img:"puma1.jpg"}, 
   
 {name:"RedTape Lifestyle",price:1999,mrp:2999,brand:"RedTape",img:"radtape-lifestyle.jpg"},
 {name:"RedTape Casual",price:1899,mrp:2799,brand:"RedTape",img:"redtape-casual.jpg"},
